@@ -30,7 +30,7 @@ Depois é só apontar o domínio em Settings > Domains.
 
 ## Antes de publicar, trocar 3 coisas no index.html
 
-1. **GTM**: no `<head>` tem o comentário `<!-- GTM: cole o container aqui -->`. Cole o script do container e o `<noscript>` logo depois da abertura do `<body>`.
+1. ~~GTM~~ já instalado: container `GTM-WVDZP4LB`, script no `<head>` e `<noscript>` no início do `<body>`.
 2. **ENDPOINT**: no final do `<script>`, a constante `var ENDPOINT = ""`. Cole a URL `/exec` do Apps Script (instruções dentro do `apps-script.gs`). Enquanto estiver vazia, o formulário continua funcionando e mandando para o WhatsApp, só não grava na planilha.
 3. **Domínio**: o `<link rel="canonical">` e a `og:image` estão em `https://www.bmrochas.com.br/`. Ajuste para o domínio final.
 
@@ -59,6 +59,5 @@ O botão fica travado até o visitante preencher nome completo (com sobrenome), 
 
 ## Pendências com o cliente
 
-- Foto da **área gourmet em mármore** (a bancada curva escura) para substituir a imagem atual do card de mármore. Enviar em resolução original.
 - Fotos em resolução maior que 720px, se existirem, principalmente para o hero.
 - Link do Google Meu Negócio para montar o bloco de avaliações.

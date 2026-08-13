@@ -8,18 +8,19 @@
  *    (está na URL: docs.google.com/spreadsheets/d/ESTE_TRECHO_AQUI/edit).
  * 4. Salve. Depois clique em Implantar > Nova implantação.
  *    Tipo: App da Web. Executar como: Eu. Quem tem acesso: Qualquer pessoa.
- * 5. Autorize quando ele pedir (vai aparecer aviso de app não verificado, é normal,
+ * 5. Autorize quando ele pedir (o aviso de app não verificado é normal:
  *    clique em Avançado > Acessar projeto).
  * 6. Copie a URL gerada (termina em /exec) e cole na constante ENDPOINT
- *    dentro do index.html, no final do script.
+ *    dentro de assets/js/app.js.
  *
- * Se depois você alterar este código, precisa fazer Implantar > Gerenciar implantações
- * > editar > Nova versão, senão a URL continua rodando o código antigo.
+ * Se depois você alterar este código, precisa fazer Implantar > Gerenciar
+ * implantações > editar > Nova versão, senão a URL continua rodando o
+ * código antigo.
  */
 
 const SHEET_ID  = 'COLE_O_ID_DA_PLANILHA_AQUI';
 const ABA       = 'Leads';
-const AVISAR    = '';  // opcional: coloque um e-mail para receber aviso a cada lead
+const AVISAR    = '';  // opcional: e-mail que recebe aviso a cada lead
 
 const COLUNAS = ['Data', 'Nome', 'WhatsApp', 'Cidade', 'Fase da obra', 'Ambiente', 'Origem'];
 
