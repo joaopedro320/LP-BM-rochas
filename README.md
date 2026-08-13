@@ -5,12 +5,14 @@ Site estático, sem build e sem dependência de framework. É só subir a pasta.
 ## Estrutura
 
 ```
-index.html          página inteira (HTML, CSS e JS no mesmo arquivo)
-assets/             imagens em WebP e as duas versões da logo
-og.jpg              imagem de compartilhamento (1200x630)
+index.html
+assets/css/style.css
+assets/js/app.js
+assets/img/          imagens em WebP e as duas versões da logo
+og.jpg               imagem de compartilhamento (1200x630)
 favicon.png
-vercel.json         cache dos assets
-apps-script.gs      código do Google Apps Script que recebe os leads
+vercel.json          cache dos assets
+apps-script.gs       código do Google Apps Script que recebe os leads
 ```
 
 ## Deploy na Vercel
@@ -52,5 +54,11 @@ O botão fica travado até o visitante preencher nome completo (com sobrenome), 
 ## Onde mexer no conteúdo
 
 - **Telefone**: buscar por `5527999100504` no index.html (aparece nos links) e `(27) 99910-0504` (texto visível).
-- **Trocar uma foto**: substituir o arquivo dentro de `assets/` mantendo o mesmo nome. `hero.webp` é a primeira dobra em desktop, `hero_m.webp` a versão vertical de celular, `p0` a `p13` são a galeria.
+- **Trocar uma foto**: substituir o arquivo dentro de `assets/img/` mantendo o mesmo nome. `hero.webp` é a primeira dobra em desktop, `hero_m.webp` a versão vertical de celular, `p0` a `p13` são a galeria.
 - **Bloco de avaliações**: ainda não existe, porque não há link do Google Meu Negócio. Quando tiver, o lugar natural é entre a seção de dúvidas e a de contato.
+
+## Pendências com o cliente
+
+- Foto da **área gourmet em mármore** (a bancada curva escura) para substituir a imagem atual do card de mármore. Enviar em resolução original.
+- Fotos em resolução maior que 720px, se existirem, principalmente para o hero.
+- Link do Google Meu Negócio para montar o bloco de avaliações.
