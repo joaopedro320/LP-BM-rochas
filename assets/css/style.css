@@ -206,3 +206,7 @@ footer ul{list-style:none}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+/* destaque do formulario quando chamado por um CTA */
+.form{transition:box-shadow .45s ease, transform .45s ease}
+.form.destaque{box-shadow:0 0 0 2px rgba(255,255,255,.55), 0 24px 60px rgba(0,0,0,.28);transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){.form.destaque{transform:none}}

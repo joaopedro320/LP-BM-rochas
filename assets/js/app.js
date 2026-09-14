@@ -46,6 +46,35 @@ document.querySelectorAll('[data-ev]').forEach(function(a){
   a.addEventListener('click', function(){ dataLayer.push({event:a.dataset.ev}); });
 });
 
+
+/* CTAs ancoram no formulario: scroll suave, pre-selecao da fase e destaque */
+(function(){
+  var alvo = document.getElementById('contato');
+  var caixa = document.getElementById('form-contato');
+  var selFase = document.getElementById('fa');
+  if(!alvo || !caixa) return;
+
+  document.querySelectorAll('a[href="#contato"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var fase = a.dataset.fase;
+      if(fase && selFase){
+        Array.prototype.forEach.call(selFase.options, function(o){
+          if(o.value === fase || o.textContent.trim() === fase) selFase.value = o.value;
+        });
+        selFase.dispatchEvent(new Event('change'));
+      }
+      alvo.scrollIntoView({behavior:'smooth', block:'start'});
+      caixa.classList.add('destaque');
+      setTimeout(function(){ caixa.classList.remove('destaque'); }, 1600);
+      setTimeout(function(){
+        var n = document.getElementById('n');
+        if(n && !n.value) n.focus({preventScroll:true});
+      }, 700);
+    });
+  });
+})();
+
 /* lightbox */
 var lb = document.getElementById('lb'), lbi = document.getElementById('lbi');
 document.querySelectorAll('#galeria figure').forEach(function(f){
