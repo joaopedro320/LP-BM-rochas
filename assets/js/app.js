@@ -90,7 +90,7 @@ lb.addEventListener('click', function(e){ if(e.target === lb) fechar(); });
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fechar(); });
 
 /* formulario: valida, grava na planilha (Apps Script) e leva pro WhatsApp */
-var ENDPOINT = ""; /* cole aqui a URL do Google Apps Script publicado */
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbwdh-wZbDX0jhMmuiknarcwmDpJD_wxItYQ-1TdLvRaHNZEEh9AvvULK7bt1yRBerdMRQ/exec";
 var btn = document.getElementById('enviar'), nota = document.getElementById('nota');
 var campos = ['n','w','c','fa','am'].map(function(id){ return document.getElementById(id); });
 var obrigatorios = ['n','w','c'];
@@ -129,7 +129,7 @@ btn.addEventListener('click', function(){
   var dados = {nome:v('n'), whatsapp:v('w'), cidade:v('c'), fase:v('fa'), ambiente:v('am'), origem:location.href, data:new Date().toISOString()};
   dataLayer.push({event:'submit_formulario', fase:dados.fase, ambiente:dados.ambiente});
   btn.disabled = true; btn.textContent = 'Enviando...';
-  var msg = 'Olá, vim do Google e acabei de preencher o formulário no site.\n\nNome: ' + dados.nome + '\nCidade: ' + dados.cidade + '\nFase da obra: ' + dados.fase + '\nAmbiente: ' + dados.ambiente;
+  var msg = 'Olá, vim do google e acabei de preencher o formulario no site.\n\nNome: ' + dados.nome + '\nCidade: ' + dados.cidade + '\nFase da obra: ' + dados.fase + '\nAmbiente: ' + dados.ambiente;
   var ir = function(){ window.location.href = 'https://wa.me/5527999100504?text=' + encodeURIComponent(msg); };
   if(ENDPOINT){
     fetch(ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(dados)})
