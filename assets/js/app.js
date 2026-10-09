@@ -130,7 +130,7 @@ btn.addEventListener('click', function(){
   dataLayer.push({event:'submit_formulario', fase:dados.fase, ambiente:dados.ambiente});
   btn.disabled = true; btn.textContent = 'Enviando...';
   var msg = 'Olá, vim do google e acabei de preencher o formulario no site.';
-  var ir = function(){ window.location.href = 'https://wa.me/5527999100504?text=' + encodeURIComponent(msg); };
+  var ir = function(){ window.location.href = 'https://wa.me/5527999321728?text=' + encodeURIComponent(msg); };
   if(ENDPOINT){
     fetch(ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(dados)})
       .then(ir).catch(ir);
